@@ -1,0 +1,46 @@
+<html>
+    <body bgcolor = #d4a3ae>
+        <center>
+
+            <h1>King County House Price Prediction</h1><br>
+            
+
+            <div class='div2'>
+                <form action="{{ url_for('predict') }}" method="POST">
+                    <select class="form-input align-center" name="waterfront">
+                        <option value="none">--- Select a waterfront ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+            
+                    </select><br>
+                    
+                    <select class="form-input align-center" name="condition">
+                        <option value="none">--- Select a condition ---</option>
+                        <option value="best">best</option>
+                        <option value="better">better</option>
+                        <option value="good">good</option>
+                        <option value="bad">bad</option>
+                        <option value="worse">worse</option>
+                    </select><br>
+
+                    <input class="form-input" type="text" name="bedrooms" placeholder="bedrooms eg. 2"><br>
+                    <input class="form-input" type="text" name="bathrooms" placeholder="bathrooms eg. 2"><br>
+                    <input class="form-input" type="text" name="sqft_living" placeholder="sqft_living eg. 1180"><br>
+                    <input class="form-input" type="text" name="sqft_lot" placeholder="sqft_lot eg. 1250"><br>
+                    <input class="form-input" type="text" name="sqft_above" placeholder="sqft_above eg. 1120"><br>
+                    <input class="form-input" type="text" name="sqft_basement" placeholder="sqft_basement eg. 1130"><br>
+			        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        	    </form>
+                
+                <br>
+                <br>
+                {{ prediction_text }}
+            </div>
+        
+
+        </center>
+
+
+
+    </body>
+</html>
